@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'pages/home'
-
 resources :orders
 
 resources :flats
 
-resources :users
+resources :pages
 
   devise_for :users
   root to: "pages#home"
