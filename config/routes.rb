@@ -1,32 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'oders/new'
+resources :orders
 
-  get 'oders/create'
-
-  get 'oders/update'
-
-  get 'oders/edit'
-
-  get 'oders/destroy'
-
-  get 'oders/index'
-
-  get 'oders/show'
-
-  get 'flats/new'
-
-  get 'flats/create'
-
-  get 'flats/update'
-
-  get 'flats/edit'
-
-  get 'flats/destroy'
-
-  get 'flats/index'
-
-  get 'flats/show'
+resources :flats
 
   devise_for :users
   root to: "home#index"
