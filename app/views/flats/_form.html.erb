@@ -1,10 +1,46 @@
-<%= form_for(@post, html: { multipart: true }) do |f| %>
+<%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
   <!-- ... -->
-  <p>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :capacity %>
+    <%= f.text_field :capacity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.input :country, collection: @continents%>
+  </div>
+
+  <div class="field">
     <%= f.label :picture %>
     <%= f.file_field :picture %>
-  </p>
-  <p><%= f.submit %></p>
+  </div>
+
+
+
+  <div class="action">
+  <%= f.submit %>
+  </div>
 <% end %>
 
 <!-- TODO:
