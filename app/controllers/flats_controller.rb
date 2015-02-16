@@ -19,4 +19,8 @@ class FlatsController < ApplicationController
 
   def show
   end
+
+  def flats_params
+     params.require(:flat).permit(:title, :body, :picture)
+     # A MODIF
 end
