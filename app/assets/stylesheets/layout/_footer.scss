@@ -1,1 +1,35 @@
 // Your footer style
+
+.footer {
+  background-color: $th-gray2;
+  padding: 30px 0;
+  color: $th-gray;
+  padding: 10px;
+  font-family: $base-font;
+}
+.footer p {
+  margin-top: 17px;
+}
+.footer ul {
+  margin-top: 10px;
+}
+.footer a {
+  color: $th-gray;
+  font-size: 30px;
+  letter-spacing: 20px;
+  transition: color 0.3s ease;
+}
+#font a{
+  color: $th-gray;
+  font-size: 16px;
+  letter-spacing: 0px;
+  transition: color 0.3s ease;
+}
+.footer a:hover {
+  color: $blue;
+  opacity: 0.7;
+}
+#font a:hover {
+  color: $blue;
+  opacity: 0.7;
+}

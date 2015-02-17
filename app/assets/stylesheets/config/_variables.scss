@@ -3,8 +3,8 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700|Raleway:300,400");
-$base-font: "freight", "Open Sans", "Helvetica", "sans-serif";
-$header-font: "freight", "Montserrat", "sans-serif";
+$base-font: "lineto-circular", "Open Sans", "Helvetica", "sans-serif";
+$header-font: "lineto-circular", "Montserrat", "sans-serif";
 $navbar-font: "lineto-circular", 'Raleway', "sans-serif";
 
 // Local fonts (uncomment following lines)
@@ -51,6 +51,8 @@ $green: #32B796;
 $purple: #6452BD;
 $th-green1: #3AC162;
 $th-green2: #2C9676;
+$th-gray: #384047;
+$th-gray2: #D4D9DD;
 
 // Gray scale
 $gray-darker:  lighten(#000, 13.5%); // #222
