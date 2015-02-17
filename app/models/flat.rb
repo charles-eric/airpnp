@@ -14,5 +14,4 @@ class Flat < ActiveRecord::Base
   end
 
 
-
 end

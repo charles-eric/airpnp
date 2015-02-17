@@ -46,11 +46,10 @@ class FlatsController < ApplicationController
 
   def index
     if params[:search]
-    @flats = Flat.search(params[:search]).order("created_at DESC")
-  else
-    @flats = Flat.all.order('created_at DESC')
-  end
-
+      @flats = Flat.search(params[:search]).order("created_at DESC")
+    else
+      @flats = Flat.all.order("created_at DESC")
+    end
   end
 
   def show
