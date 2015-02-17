@@ -1,3 +1,10 @@
+<%= form_tag(flats_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Your next destination" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+
+
 
 <% @flats.each do |flat| %>
 
