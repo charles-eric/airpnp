@@ -10,28 +10,28 @@ $navbar-font: "lineto-circular", 'Raleway', "sans-serif";
 // Local fonts (uncomment following lines)
 @font-face {
   font-family: "lineto-circular";
-  src: font-url('lineto-circular-pro-medium.eot');
-  src: font-url('lineto-circular-pro-medium.eot?#iefix') format('embedded-opentype'),
-       font-url('lineto-circular-pro-medium.woff') format('woff'),
-       font-url('lineto-circular-pro-medium.ttf') format('truetype')
+  src: font_path('fonts/lineto-circular-pro-medium.eot');
+  src: font_path('fonts/lineto-circular-pro-medium.eot?#iefix') format('embedded-opentype'),
+       font_path('fonts/lineto-circular-pro-medium.woff') format('woff'),
+       font_path('fonts/lineto-circular-pro-medium.ttf') format('truetype')
 }
 $base-font2: "lineto-circular";
 
 @font-face {
   font-family: "lineto-circular-bold";
-  src: font-url('lineto-circular-pro-bold.eot');
-  src: font-url('lineto-circular-pro-bold.eot?#iefix') format('embedded-opentype'),
-       font-url('lineto-circular-pro-bold.woff') format('woff'),
-       font-url('lineto-circular-pro-bold.ttf') format('truetype')
+  src: font_path('fonts/lineto-circular-pro-bold.eot');
+  src: font_path('fonts/lineto-circular-pro-bold.eot?#iefix') format('embedded-opentype'),
+       font_path('fonts/lineto-circular-pro-bold.woff') format('woff'),
+       font_path('fonts/lineto-circular-pro-bold.ttf') format('truetype')
 }
 $base-font2-bold: "lineto-circular-bold";
 
 @font-face {
   font-family: "freight";
-  src: font-url('freight-text-pro.eot');
-  src: font-url('freight-text-pro.eot?#iefix') format('embedded-opentype'),
-       font-url('freight-text-pro.woff') format('woff'),
-       font-url('freight-text-pro.ttf') format('truetype')
+  src: font_path('fonts/freight-text-pro.eot');
+  src: font_path('fonts/freight-text-pro.eot?#iefix') format('embedded-opentype'),
+       font_path('fonts/freight-text-pro.woff') format('woff'),
+       font_path('fonts/freight-text-pro.ttf') format('truetype')
 }
 $base-font3: "freight";
 

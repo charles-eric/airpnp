@@ -1,10 +1,36 @@
-<div class="container padding1">
-  <div class="row">
-    <h1>Airpnp </h1><h2> - </h2><h3> Où vous voulez quand vous voulez !</h3>
+
+
+  <div class="height-wrapper">
+    <div class="overflow-wrapper">
+      <video autoplay="true" loop="loop" onended="this.play()">
+        <source src="https://d3mlfyygrfdi2i.cloudfront.net/a144/hploop_0204.mp4" type="video/mp4">
+        <source src="https://d3mlfyygrfdi2i.cloudfront.net/90da/hploop_0204.webm" type="video/webm">
+        <img src="https://d3mlfyygrfdi2i.cloudfront.net/9d45/hploop_0204.jpg">
+        You need an HTML5 enabled browser to view this video.
+      </video>
+    </div>
   </div>
-</div>
-<div class="container">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex rem asperiores qui adipisci, quod suscipit iure facilis consequuntur. Modi quidem tempora exercitationem culpa vitae, sint totam velit enim, labore aliquam!
-  </p>
+
+
+<div class="content">
+  <div class="container padding1">
+    <div class="row">
+      <h1>Airpnp</h1><h2>-</h2><h3>Où vous voulez quand vous voulez !</h3>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form">
+      <%= form_tag(flats_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Your next destination" %>
+        <%= submit_tag "Search", :name => nil %>
+      <% end %>
+    </div>
+    <div class="black">
+      <br>
+      <br>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex rem asperiores qui adipisci, quod suscipit iure facilis consequuntur. Modi quidem tempora exercitationem culpa vitae, sint totam velit enim, labore aliquam!
+      </p>
+    </div>
+  </div>
 </div>
