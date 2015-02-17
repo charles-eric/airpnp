@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+
+$(document).scroll(function(event){
+  if ($(document).scrollTop() > 100) {
+    $('.navbar').css('background', ' rgba(255, 255, 255, 0.85)')
+  }
+  else {
+    $('.navbar').css('background', ' rgba(255, 255, 255, 1)')
+  }
+});
