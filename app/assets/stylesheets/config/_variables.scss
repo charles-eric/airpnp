@@ -3,19 +3,37 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700|Raleway:300,400");
-$base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Montserrat", "sans-serif";
-$navbar-font: 'Raleway', "sans-serif";
+$base-font: "lineto-circular", "Open Sans", "Helvetica", "sans-serif";
+$header-font: "lineto-circular", "Montserrat", "sans-serif";
+$navbar-font: "lineto-circular", 'Raleway', "sans-serif";
 
 // Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "lineto-circular";
+  src: font-url('lineto-circular-pro-medium.eot');
+  src: font-url('lineto-circular-pro-medium.eot?#iefix') format('embedded-opentype'),
+       font-url('lineto-circular-pro-medium.woff') format('woff'),
+       font-url('lineto-circular-pro-medium.ttf') format('truetype')
+}
+$base-font2: "lineto-circular";
+
+@font-face {
+  font-family: "lineto-circular-bold";
+  src: font-url('lineto-circular-pro-bold.eot');
+  src: font-url('lineto-circular-pro-bold.eot?#iefix') format('embedded-opentype'),
+       font-url('lineto-circular-pro-bold.woff') format('woff'),
+       font-url('lineto-circular-pro-bold.ttf') format('truetype')
+}
+$base-font2-bold: "lineto-circular-bold";
+
+@font-face {
+  font-family: "freight";
+  src: font-url('freight-text-pro.eot');
+  src: font-url('freight-text-pro.eot?#iefix') format('embedded-opentype'),
+       font-url('freight-text-pro.woff') format('woff'),
+       font-url('freight-text-pro.ttf') format('truetype')
+}
+$base-font3: "freight";
 
 // Font-size and line-height
 $base-size: 16px;
@@ -31,6 +49,10 @@ $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
 $purple: #6452BD;
+$th-green1: #3AC162;
+$th-green2: #2C9676;
+$th-gray: #384047;
+$th-gray2: #D4D9DD;
 
 // Gray scale
 $gray-darker:  lighten(#000, 13.5%); // #222

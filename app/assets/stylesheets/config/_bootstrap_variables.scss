@@ -4,7 +4,7 @@
  * ------------------------------------- */
 
 // Typography and background
-$font-family-sans-serif:  $base-font;
+$font-family-sans-serif:  $base-font2-bold;
 $body-bg:                 lighten(#000, 93.5%);
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
@@ -24,9 +24,11 @@ $border-radius-small: 2px;
 
 // Links style
 $link-hover-decoration: none;
-$link-hover-color: $blue;
-$link-color: $green;
+$link-hover-color: $th-green1;
+$link-color: $th-green2;
 
 // Grid padding
 $grid-gutter-width: 0 ;
+
+
 

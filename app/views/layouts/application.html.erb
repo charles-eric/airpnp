@@ -15,15 +15,16 @@
 <!-- navbar ? -->
   <%= render 'layouts/sessions' %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 <div
   class="fb-like"
   data-share="true"
   data-width="450"
   data-show-faces="true">
 </div>
-<%= yield %>
+
+  <%= yield %>
+
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>
