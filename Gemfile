@@ -41,6 +41,7 @@ gem 'country_select'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise'
+gem 'omniauth-facebook'
 
 gem 'better_errors', group: :development
 gem 'binding_of_caller', group: :development
