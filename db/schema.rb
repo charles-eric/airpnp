@@ -55,27 +55,20 @@ ActiveRecord::Schema.define(version: 20150217142810) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "phonenumber"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "description"
     t.string   "provider"
     t.string   "uid"
     t.string   "picture"
     t.string   "name"
     t.string   "token"
     t.datetime "token_expiry"
-=======
->>>>>>> 426daa909fdd2bc494c3ca802e4e6bc024ea3e98
-    t.string   "phonenumber"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "description"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

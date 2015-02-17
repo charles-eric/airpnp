@@ -17,31 +17,20 @@ h3 {
   display: inline-block;
   padding-left: 2px;
 }
-// .video-wrapper {
-//   position: relative;
-//   color:white;
-//   width: 100%;
-//   height: 720px;
-//   overflow: hidden;
-//   text-align:center;
-// }
-// video {
-//   width: 100%;
-//   top: -200px;
-//   right: 0;
-//   position: absolute;
-//   z-index: -1;
-// }
-
-.height-wrapper{
-  height: 600px;
-}
-.overflow-wrapper{
+.video-wrapper {
+  position: relative;
+  color:white;
   width: 100%;
+  height: 420px;
   overflow: hidden;
+  text-align:center;
 }
-.overflow-wrapper > video {
-  min-width: 1600px;
+video {
+  width: 100%;
+  top: -20px;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 .content {
   color: white;
