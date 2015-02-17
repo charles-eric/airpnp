@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-resources :orders
 
-resources :flats
+
+resources :flats do
+  resources :orders
+end
 
 resources :pages
 

@@ -1,12 +1,19 @@
 
 <%= image_tag @flat.picture.url(:medium) %>
+<p>Description:</p>
 <%= @flat.description %>
+<p>Capacity:</p>
 <%= @flat.capacity %>
+<p>Address:</p>
 <%= @flat.address %>
+<p>City:</p>
 <%= @flat.city %>
+<p>Country:</p>
 <%= @flat.country %>
+<p>Price per day:</p>
 <%= @flat.price %>
 
 <br>
 
+<%= link_to 'BOOK', new_flat_order_path(@flat) %>
 <%= link_to 'Back', flats_path %>
