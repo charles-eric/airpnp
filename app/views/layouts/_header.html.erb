@@ -18,6 +18,9 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li>
+            <%= current_user.email %>
+          </li>
+          <li>
             <%= link_to "mailto:contact@lewagon.org" do %>
               <i class="fa fa-envelope-o"></i> Messages
             <% end %>
@@ -54,6 +57,9 @@
           </li>
           <li>
             <%= link_to "Connexion", new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
           </li>
           <li>
             <%= link_to "Publish an announce", new_user_session_path, class: "btn" %>
