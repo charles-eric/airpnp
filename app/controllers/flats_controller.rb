@@ -9,6 +9,7 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
+    @flat.user_id = current_user.id
 
     respond_to do |format|
       if @flat.save
