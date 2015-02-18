@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
 
   def send_owner_validation_email
     user = User.find(@flat.user_id)
-    Usermailer.owner_validation(user).deliver
+    UserMailer.owner_validation(user).deliver
     raise
   end
 end
