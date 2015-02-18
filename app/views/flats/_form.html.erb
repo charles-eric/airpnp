@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<div class="container">
+s<div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
@@ -16,56 +15,3 @@
     </div>
   </div>
 </div>
-=======
-<%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
-  <!-- ... -->
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.hidden_field :user_id, :value => current_user %>
-  </div>
-
-  <div class="field">
-    <%= f.label :capacity %>
-    <%= f.text_field :capacity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= f.input :country, collection: @continents%>
-  </div>
-
-  <div class="field">
-    <%= f.label :picture %>
-    <%= f.file_field :picture %>
-  </div>
-
-
-
-  <div class="action">
-  <%= f.submit %>
-  </div>
-<% end %>
->>>>>>> 84f06de8433809385b535472e77d6b833f3e382c
-
-<!-- TODO:
-  ADD FIELDS
-  ADD :PICTURE TO USER _FORM -->
