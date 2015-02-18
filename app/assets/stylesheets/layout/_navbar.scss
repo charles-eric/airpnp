@@ -2,7 +2,7 @@
  * Colors & Fonts
  * ------------------------------------- */
 $navbar-color: $gray-light;
-$navbar-hover-color: $th-green1;
+$navbar-hover-color: $bt-red;
 $navbar-font-family: $navbar-font;
 $navbar-font-size: 14px;
 $navbar-text-transform: capitalize;
@@ -24,7 +24,7 @@ $navbar-border-bottom-color: $gray-lighter;
  * Navbar button
  * ------------------------------------- */
 $navbar-btn-height: 40px;
-$navbar-btn-bg: $th-green1;
+$navbar-btn-bg: $bt-red;
 $navbar-btn-color: white;
 $navbar-btn-horizontal-padding: 10px;
 $navbar-btn-radius: 2px;
@@ -130,7 +130,7 @@ $navbar-profile-border-width: 2px;
 
   .navbar-nav > li > .dropdown-menu:before{
     position: absolute;
-    background: grey;
+    background: black;
     height: 10px;
     width: 10px;
     content: "\00a0";

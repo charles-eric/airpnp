@@ -1,1 +1,25 @@
 <h1>YOUR BOOKING</h1>
+
+<% if @order.accepted.nil? %>
+  <p>Waiting for your host answer</p>
+<% elsif @order.accepted %>
+  <p>All good: buy a suitcase now!</p>
+<% else %>
+  <p>Reservation denied, your profil sucks</p>
+<% end %>
+
+<%= image_tag @order.flat.picture.url(:medium) %>
+<p>Description:</p>
+<%= @order.flat.description %>
+<p>Capacity:</p>
+<%= @order.flat.capacity %>
+<p>Address:</p>
+<%= @order.flat.address %>
+<p>City:</p>
+<%= @order.flat.city %>
+<p>Country:</p>
+<%= @order.flat.country %>
+<p>Price:</p>
+<!-- TODO : CALCULER PRICE X NUMBER OF DAYS -->
+<%= @order.flat.price%>
+

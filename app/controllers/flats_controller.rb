@@ -51,7 +51,8 @@ class FlatsController < ApplicationController
     if params[:search]
       @flats = Flat.search(params[:search]).order("created_at DESC")
     else
-      Flat.joins(:order).where(:orders => {:booked => false})
+      # TODO:
+      # Flat.joins(:order).where(:orders => {:booked => false})
       @flats = Flat.all
 
     end
