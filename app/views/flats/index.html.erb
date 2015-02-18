@@ -15,7 +15,7 @@
     <% @flats.each do |flat| %>
       <div class="col-xs-12 col-sm-3">
         <div class="bg-white center padding1 content_index">
-          <div class = "content_index2">
+          <br>
           <%= link_to (image_tag flat.picture.url(:medium)), flat  %>
           <p>Description:</p>
           <%= flat.description %>
@@ -26,10 +26,6 @@
           <p>Price</p>
           <%= flat.price %>
           <br>
-          </div>
-          <div class="bot">
-            <%= link_to 'Show', flat, class: "btn btn-success" %> <%= link_to 'Edit', edit_flat_path(flat), class: "btn btn-success" %> <%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success" %>
-          </div>
         </div>
       </div>
     <% end %>
