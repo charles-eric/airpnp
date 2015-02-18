@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
     @order.booked = true
     if @order.save
       redirect_to flat_order_path(@flat, @order)
+      send_owner_validation_email
     else
       render :new
     end
@@ -43,5 +44,11 @@ class OrdersController < ApplicationController
 
   def order_params
    params.require(:order).permit(:date_begin, :date_end, :booked)
+  end
+
+  def send_owner_validation_email
+    user = User.find(@flat.user_id)
+    Usermailer.owner_validation(user).deliver
+    raise
   end
 end
