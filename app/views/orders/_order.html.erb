@@ -1,6 +1,8 @@
+<%= link_to (image_tag order.flat.picture.url(:thumb)), order.flat  %>  <br>
 From <%= order.date_begin %> to <%= order.date_end %> <br>
 Destination: <%= order.flat.city %> <br>
 Status:
 <%= "Pending" if order.pending? %>
 <%= "Accepted" if order.accepted? %>
 <%= "Refused" if order.refused? %>
+<br>
