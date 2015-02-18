@@ -1,1 +1,14 @@
 <h1>YOUR BOOKING</h1>
+<%= image_tag @order.flat.picture.url(:medium) %>
+<p>Description:</p>
+<%= @order.flat.description %>
+<p>Capacity:</p>
+<%= @order.flat.capacity %>
+<p>Address:</p>
+<%= @order.flat.address %>
+<p>City:</p>
+<%= @order.flat.city %>
+<p>Country:</p>
+<%= @order.flat.country %>
+<p>Price:</p>
+<%= @order.flat.price * date_end - date_begin %>
