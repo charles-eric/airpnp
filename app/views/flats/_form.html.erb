@@ -12,6 +12,10 @@
   </div>
 
   <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user %>
+  </div>
+
+  <div class="field">
     <%= f.label :capacity %>
     <%= f.text_field :capacity %>
   </div>
