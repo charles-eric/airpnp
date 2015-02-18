@@ -18,6 +18,11 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li>
+            <%= link_to flats_path do %>
+              <i class="fa fa-home"></i> Flats
+            <% end %>
+          </li>
+          <li>
             <%= link_to "mailto:contact@lewagon.org" do %>
               <i class="fa fa-envelope-o"></i> Messages
             <% end %>
@@ -37,7 +42,12 @@
               </li>
               <li>
                 <%= link_to flats_path do %>
-                  <i class="fa fa-home"></i> Flats
+                  <i class="fa fa-home"></i> My Flats
+                <% end %>
+              </li>
+              <li>
+                <%= link_to flat_order_path(:flat_id, :order_id) do %>
+                  <i class="fa fa-home"></i> My bookings
                 <% end %>
               </li>
               <li>
@@ -52,13 +62,15 @@
           </li>
         <% else %>
           <li>
+            <%= link_to flats_path do %>
+              <i class="fa fa-home"></i> Flats
+            <% end %>
+          </li>
+          <li>
             <%= link_to "Inscription", new_user_registration_path %>
           </li>
           <li>
             <%= link_to "Connexion", new_user_session_path %>
-          </li>
-          <li>
-            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
           </li>
           <li>
             <%= link_to "Publish an announce", new_user_session_path, class: "btn" %>
