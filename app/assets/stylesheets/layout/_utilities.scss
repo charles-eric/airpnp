@@ -9,6 +9,7 @@
 }
 .padding1 {
   padding: 8px;
+  border-radius: 5px;
 }
 .bg-red {
   background: $red;
@@ -33,6 +34,10 @@
 .bg-purple {
   background: $purple;
   color: white;
+}
+.bg-white {
+  background: white;
+  color: black;
 }
 .center {
   text-align: center;
