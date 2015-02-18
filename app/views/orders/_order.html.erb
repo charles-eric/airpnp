@@ -1,4 +1,6 @@
-From <%= order.date_begin %> to <%= order.date_end %>
-<%= "pending" if order.pending? %>
-<%= "accepted" if order.accepted? %>
-<%= "refused" if order.refused? %>
+From <%= order.date_begin %> to <%= order.date_end %> <br>
+Destination: <%= order.flat.city %> <br>
+Status:
+<%= "Pending" if order.pending? %>
+<%= "Accepted" if order.accepted? %>
+<%= "Refused" if order.refused? %>
