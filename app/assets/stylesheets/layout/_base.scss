@@ -14,9 +14,9 @@ body {
   min-height: 650px;
   height: 100%;
 }
-#wrapper {
-  min-height: 100%;
-  position: relative;
+#main-container {
+  min-height: 600px;
+  padding-top: 50px;
 }
 
 .margin-none {

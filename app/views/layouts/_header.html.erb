@@ -8,8 +8,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
-        <%= image_tag "logo.png" %>
+      <a class="navbar-brand" href="/">
+        <%= image_tag "Airbnb.jpg" %>
       </a>
     </div>
 
@@ -18,22 +18,17 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li>
-            <%= current_user.email %>
-          </li>
-          <li>
             <%= link_to "mailto:contact@lewagon.org" do %>
               <i class="fa fa-envelope-o"></i> Messages
             <% end %>
           </li>
           <li class="dropdown">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
-            <% if current_user.picture_file_name %>
-              <%= image_tag current_user.picture.url(:medium), class: "img-avatar"  %>
-            <% else %>
-              <%= image_tag "http://placehold.it/30x30", class: "img-avatar" %>
+              <%= picture_for(current_user)  %>
+              <%= current_user.email %>
+              <span class="caret"></span>
             <% end %>
-              Profile <span class="caret"></span>
-            <% end %>
+
             <ul class="dropdown-menu" role="menu">
               <li>
                 <%= link_to edit_user_registration_path do %>
