@@ -4,6 +4,25 @@
  * Before writing in this file, look if there is not
  * already a Bootstrap SCSS variable that does the same job
  * ------------------------------------- */
+html {
+  height: 100%;
+  min-height: 650px;
+}
+
 body {
   font-family: $base-font;
+  min-height: 650px;
+  height: 100%;
+}
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.margin-none {
+  margin: 0;
+}
+
+.total-width {
+  width: 100%;
 }

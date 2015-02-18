@@ -11,22 +11,23 @@
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-  <%= render 'layouts/header' %>
-<!-- navbar ? -->
-  <%= render 'layouts/sessions' %>
+  <div id="wrapper">
+      <%= render 'layouts/header' %>
+    <!-- navbar ? -->
+      <%= render 'layouts/sessions' %>
 
-<!-- Demander à charles qu'est ce que c'est que ce code de merde !!! qui me fout tout mon css en l'aire  -->
+    <!-- Demander à charles qu'est ce que c'est que ce code de merde !!! qui me fout tout mon css en l'aire  -->
 
-<div>
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
+    <div>
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
+    </div>
 
-  <%= yield %>
+    <%= yield %>
 
-  <%= render 'layouts/footer' %>
-
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>
