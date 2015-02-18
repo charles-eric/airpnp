@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
+          <%= f.input :description, placeholder: 'A nice address', hint: 'No special characters.' %>
+          <%= f.input :price %>
+          <%= f.input :capacity %>
+          <%= f.input :address %>
+          <%= f.input :city %>
+          <%= f.input :country, collection: @continents, prompt: "Select a country"%>
+          <%= f.file_field :picture %>
+        <%= f.submit %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+=======
 <%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
   <!-- ... -->
 
@@ -45,6 +64,7 @@
   <%= f.submit %>
   </div>
 <% end %>
+>>>>>>> 84f06de8433809385b535472e77d6b833f3e382c
 
 <!-- TODO:
   ADD FIELDS

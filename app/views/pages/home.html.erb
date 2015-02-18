@@ -16,24 +16,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="form">
-        <%= form_tag(flats_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Your next destination" %>
-          <%= submit_tag "Search", :name => nil %>
+      <div class="form" style="z-index: 10000;">
+        <%= form_tag(flats_path, :method => "get", class: "form-inline") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Your next destination", class: "form-control" %>
+          <%= submit_tag "Search", :name => nil, class: "btn btn-danger" %>
         <% end %>
-      </div>
-      <div class="black">
-        <br>
-        <br>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex rem asperiores qui adipisci, quod suscipit iure facilis consequuntur. Modi quidem tempora exercitationem culpa vitae, sint totam velit enim, labore aliquam!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex rem asperiores qui adipisci, quod suscipit iure facilis consequuntur. Modi quidem tempora exercitationem culpa vitae, sint totam velit enim, labore aliquam!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex rem asperiores qui adipisci, quod suscipit iure facilis consequuntur. Modi quidem tempora exercitationem culpa vitae, sint totam velit enim, labore aliquam!
-        </p>
       </div>
     </div>
   </div>
