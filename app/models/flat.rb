@@ -1,6 +1,7 @@
 class Flat < ActiveRecord::Base
   belongs_to :user
   has_many :orders
+  accepts_nested_attributes_for :orders
 
    has_attached_file :picture,
     styles: { medium: "500x500>", thumb: "100x100>" }
@@ -15,3 +16,5 @@ class Flat < ActiveRecord::Base
 
 
 end
+
+#ADD VALIDATE IMAGE OBLIGATOIR

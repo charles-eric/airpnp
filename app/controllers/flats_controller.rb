@@ -4,6 +4,7 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    @flat.orders.build
   end
 
   def create
@@ -45,10 +46,14 @@ class FlatsController < ApplicationController
   end
 
   def index
+
     if params[:search]
       @flats = Flat.search(params[:search]).order("created_at DESC")
     else
-      @flats = Flat.all.order("created_at DESC")
+
+      Flat.joins(:order).where(:orders => {:booked => false})
+      @flats = Flat.all
+
     end
   end
 
