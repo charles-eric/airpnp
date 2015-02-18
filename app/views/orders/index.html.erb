@@ -1,6 +1,6 @@
 <h1>My trips</h1>
 
-<ul>
+<ul style="list-style: none;">
   <% current_user.orders.each do |o| %>
     <li>
       <%= render "order", order: o %>
