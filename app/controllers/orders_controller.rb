@@ -10,17 +10,11 @@ class OrdersController < ApplicationController
     @flat = Flat.find(params[:flat_id])
     @order = @flat.orders.build(order_params)
     @order.user = current_user
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @flat, notice: 'order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-        @order.booked = true
-        @order.save
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    @order.booked = true
+    if @order.save
+      redirect_to flat_order_path(@flat, @order)
+    else
+      render :new
     end
   end
 
@@ -38,6 +32,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   private
