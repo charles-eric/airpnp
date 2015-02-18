@@ -16,8 +16,8 @@ class UserMailer < ApplicationMailer
   #
   #   en.usermailer.owner-validation.subject
   #
-  def owner_validation(User)
-    @user = user
-    mail(to: @user.email, subject: 'New order for your flat')
-  end
+  # def owner_validation(User)
+  #   @user = user
+  #   mail(to: @user.email, subject: 'New order for your flat')
+  # end
 end
