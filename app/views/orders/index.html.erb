@@ -1,0 +1,9 @@
+<h1>My trips</h1>
+
+<ul>
+  <% current_user.orders.each do |o| %>
+    <li>
+      <%= render "order", order: o %>
+    </li>
+  <% end %>
+</ul>

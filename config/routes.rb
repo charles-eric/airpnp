@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-
+resources :orders, only: [:index]
 
 resources :flats do
-  resources :orders
+  resources :orders, only: [:new, :create]
 end
 
 resources :pages
