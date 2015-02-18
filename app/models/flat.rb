@@ -4,7 +4,8 @@ class Flat < ActiveRecord::Base
   accepts_nested_attributes_for :orders
 
    has_attached_file :picture,
-    styles: { medium: "500x500>", thumb: "100x100>" }
+    styles: { medium: "500x500>", thumb: "100x100>" },
+    :default_url => "/images/:styles/missing.png"
 
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
@@ -17,4 +18,4 @@ class Flat < ActiveRecord::Base
 
 end
 
-#ADD VALIDATE IMAGE OBLIGATOIR
+#ADD VALIDATE IMAGE
