@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :oders
+  has_many :orders
   has_many :flats
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

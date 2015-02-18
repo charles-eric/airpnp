@@ -1,6 +1,14 @@
-<%= simple_form_for [@flat, @order] do |f| %>
-  <%= f.input :date_begin, as: :date %>
-  <%= f.input :date_end, as: :date %>
-  <%= f.submit %>
-<% end %>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <br><br>
+        <%= simple_form_for [@flat, @order] do |f| %>
+          <%= f.input :date_begin, as: :date %>
+          <%= f.input :date_end, as: :date %>
+        <div class="center">
+          <%= f.submit class: "btn btn-danger" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

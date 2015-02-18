@@ -5,6 +5,10 @@
   color: $th-gray;
   padding: 10px;
   font-family: $base-font;
+  position: relative;
+  bottom:0;
+  left:0;
+  width: 100%;
 }
 .footer ul {
   margin-top: 10px;

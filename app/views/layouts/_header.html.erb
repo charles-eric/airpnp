@@ -8,8 +8,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
-        <%= image_tag "logo.png" %>
+      <a class="navbar-brand" href="/">
+        <%= image_tag "airpnp.jpg" %>
       </a>
     </div>
 
@@ -18,7 +18,9 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li>
-            <%= current_user.email %>
+            <%= link_to flats_path do %>
+              <i class="fa fa-home"></i> Flats
+            <% end %>
           </li>
           <li>
             <%= link_to "mailto:contact@lewagon.org" do %>
@@ -27,13 +29,11 @@
           </li>
           <li class="dropdown">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
-            <% if current_user.picture_file_name %>
-              <%= image_tag current_user.picture.url(:medium), class: "img-avatar"  %>
-            <% else %>
-              <%= image_tag "http://placehold.it/30x30", class: "img-avatar" %>
+              <%= picture_for(current_user)  %>
+              <%= current_user.email %>
+              <span class="caret"></span>
             <% end %>
-              Profile <span class="caret"></span>
-            <% end %>
+
             <ul class="dropdown-menu" role="menu">
               <li>
                 <%= link_to edit_user_registration_path do %>
@@ -41,8 +41,13 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to "#" do %>
-                  <i class="fa fa-home"></i> Flats
+                <%= link_to flats_path do %>
+                  <i class="fa fa-home"></i> My Flats
+                <% end %>
+              </li>
+              <li>
+                <%= link_to orders_path do %>
+                  <i class="fa fa-home"></i> My bookings
                 <% end %>
               </li>
               <li>
@@ -51,16 +56,21 @@
                 <% end %>
               </li>
             </ul>
+            <li>
+              <%= link_to "Publish an announce", new_flat_path, class: "btn" %>
+            </li>
           </li>
         <% else %>
+          <li>
+            <%= link_to flats_path do %>
+              <i class="fa fa-home"></i> Flats
+            <% end %>
+          </li>
           <li>
             <%= link_to "Inscription", new_user_registration_path %>
           </li>
           <li>
             <%= link_to "Connexion", new_user_session_path %>
-          </li>
-          <li>
-            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
           </li>
           <li>
             <%= link_to "Publish an announce", new_user_session_path, class: "btn" %>

@@ -1,47 +1,21 @@
-<%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
-  <!-- ... -->
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <br><br>
+      <%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
+        <%= f.input :description, placeholder: 'A nice description', hint: 'No special characters.' %>
+        <%= f.input :price, placeholder: 'A great price', hint: 'Only numbers pls.'%>
+        <%= f.input :capacity, placeholder: 'Capitcity number' %>
+        <%= f.input :address, placeholder: 'Street number, street' %>
+        <%= f.input :city, placeholder: 'City\'s place' %>
+        <%= f.input :country, collection: @continents, prompt: "Select a country" %>
+        <br>
+        <%= f.file_field :picture %>
+        <br>
+        <div class="center">
+          <%= f.submit class: "btn btn-danger" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :capacity %>
-    <%= f.text_field :capacity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= f.input :country, collection: @continents%>
-  </div>
-
-  <div class="field">
-    <%= f.label :picture %>
-    <%= f.file_field :picture %>
-  </div>
-
-
-
-  <div class="action">
-  <%= f.submit %>
-  </div>
-<% end %>
-
-<!-- TODO:
-  ADD FIELDS
-  ADD :PICTURE TO USER _FORM -->
+</div>
