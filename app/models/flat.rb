@@ -4,7 +4,7 @@ class Flat < ActiveRecord::Base
   accepts_nested_attributes_for :orders
 
    has_attached_file :picture,
-    styles: { medium: "250x250>", thumb: "100x100>" },
+    styles: { large: "500x500>", medium: "250x250>", thumb: "100x100>" },
     :default_url => "/images/:styles/missing.png"
 
   validates_attachment_content_type :picture,
