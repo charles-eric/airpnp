@@ -17,9 +17,9 @@
     </div>
     <div class="row">
       <div class="form" style="z-index: 10000;">
-        <%= form_tag(flats_path, :method => "get", class: "form-inline") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Your next destination", class: "form-control" %>
-          <%= submit_tag "Search", :name => nil, class: "btn btn-danger" %>
+         <%= form_tag(flats_path, :method => "get", id: "search-form", class: "form-inline") do %>
+        <%= text_field_tag :city, params[:city], placeholder: "Your next destination", class: "form-control" %>
+        <%= submit_tag "Search", :name => nil, class: "btn btn-danger" %>
         <% end %>
       </div>
     </div>
