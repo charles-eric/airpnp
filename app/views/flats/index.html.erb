@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-4">
+      <br>
+      <br>
       <%= form_tag(flats_path, :method => "get", id: "search-form", class: "form-inline") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Your next destination", class: "form-control" %>
         <%= submit_tag "Search", :name => nil, class: "btn btn-danger" %>
