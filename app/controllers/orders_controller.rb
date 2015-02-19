@@ -20,6 +20,10 @@ class OrdersController < ApplicationController
   end
 
   def update
+    @order = Order.find(params[:id])
+    @order.update(order_params)
+
+    redirect_to dashboard_path
   end
 
   def edit
@@ -30,6 +34,9 @@ class OrdersController < ApplicationController
   end
 
   def index
+  end
+
+  def dashboard
   end
 
   def show
@@ -43,7 +50,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-   params.require(:order).permit(:date_begin, :date_end, :booked)
+   params.require(:order).permit(:date_begin, :date_end, :booked, :accepted)
   end
 
   # def send_owner_validation_email
