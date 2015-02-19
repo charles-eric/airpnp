@@ -1,6 +1,6 @@
 class Flat < ActiveRecord::Base
   belongs_to :user
-  has_many :orders
+  has_many :orders, dependent: :destroy
   accepts_nested_attributes_for :orders
 
    has_attached_file :picture,
