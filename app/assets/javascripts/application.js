@@ -15,10 +15,8 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+//= require fancybox
 //= require_tree .
-
-
-
 
 
 $(document).scroll(function(event){
@@ -29,6 +27,11 @@ $(document).scroll(function(event){
     $('.navbar').css('background', ' rgba(255, 255, 255, 1)')
   }
 });
+
+$(document).ready(function() {
+  $("a.fancybox").fancybox();
+});
+
 
 // voir si à supprimer
 //alert('Sadly this is static...');

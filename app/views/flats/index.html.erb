@@ -30,36 +30,39 @@
 <br>
 <div class="container">
   <div class="row">
-    <% @flats.each do |flat| %>
-      <div class="col-xs-12 col-sm-3">
-        <div class="bg-white center padding1 content_index">
-          <br>
-            <div class="border-bot padding1">
-              <% if flat.picture_file_name %>
-                <%= link_to (image_tag flat.picture.url(:medium)), flat %>
-              <% else %>
-                <%= link_to (image_tag("missing_image.png", class: "img-avatar")), flat%>
-              <% end %>
-            </div>
-            <div class="border-bot">
-              <p>Description:</p>
-              <%= flat.description %>
-            </div>
-            <div class="border-bot">
-              <p>Capacity:</p>
-              <%= flat.capacity %>
-            </div>
-            <div class="border-bot">
-              <p>Country:</p>
-              <%= flat.country %>
-            </div>
-            <div class="border-bot">
-              <p>Price</p>
-              <%= flat.price %>
-            </div>
-          <br>
+    <% @flats.each_slice(4) do |flats| %>
+      <% flats.each do |flat| %>
+        <div class="col-xs-12 col-sm-3">
+          <div class="bg-white center padding1 content_index">
+            <br>
+              <div class="border-bot padding1">
+                <% if flat.picture_file_name %>
+                  <%= link_to (image_tag flat.picture.url(:medium)), flat %>
+                <% else %>
+                  <%= link_to (image_tag("missing_image.png", class: "img-avatar")), flat%>
+                <% end %>
+              </div>
+              <div class="border-bot">
+                <p>Description:</p>
+                <%= flat.description %>
+              </div>
+              <div class="border-bot">
+                <p>Capacity:</p>
+                <%= flat.capacity %>
+              </div>
+              <div class="border-bot">
+                <p>Country:</p>
+                <%= flat.country %>
+              </div>
+              <div class="border-bot">
+                <p>Price</p>
+                <%= flat.price %>
+              </div>
+            <br>
+          </div>
         </div>
-      </div>
+      <% end %>
+      <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
     <% end %>
   </div>
 </div>
