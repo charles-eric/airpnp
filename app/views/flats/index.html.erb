@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-4">
       <%= form_tag(flats_path, :method => "get", id: "search-form", class: "form-inline") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Your next destination", class: "form-control" %>
+        <%= text_field_tag :city, params[:city], placeholder: "Your next destination", class: "form-control" %>
+        <%= label_tag :capacity %>
+        <%= select_tag :capacity, options_for_select(Flat::CAPACITY_OPTIONS), class: "form-control"%>
         <%= submit_tag "Search", :name => nil, class: "btn btn-danger" %>
       <% end %>
     </div>
@@ -16,13 +18,22 @@
       <div class="col-xs-12 col-sm-3">
         <div class="bg-white center padding1 content_index">
           <br>
-          <%= link_to (image_tag flat.picture.url(:medium)), flat  %>
+          <%=   %>
+
+          <% if flat.picture_file_name %>
+          <%= link_to (image_tag flat.picture.url(:medium)), flat %>
+          <% else %>
+          <%= link_to (image_tag("missing_image.png", class: "img-avatar")), flat%>
+          <% end %>
+
           <p>Description:</p>
           <%= flat.description %>
           <p>Capacity:</p>
           <%= flat.capacity %>
           <p>Country:</p>
           <%= flat.country %>
+          <p>City:</p>
+          <%= flat.city %>
           <p>Price</p>
           <%= flat.price %>
           <br>
@@ -31,4 +42,5 @@
     <% end %>
   </div>
 </div>
+
 
