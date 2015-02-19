@@ -2,15 +2,24 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="bg-white padding1 content_index">
-        <% content_for(:after_js) do %>
-          <%= javascript_tag do %>
-            $(document).ready(function() {
-              var coord = <%= raw @flat_coordinates %>;
-              alert('Flat coordinates are ' + coord.latitude + ', ' + coord.longitude);
-            });
-          <% end %>
-        <% end %>
-        <div id="map" style="width: 100%; height: 600px;"></div>
+
+<div id="map" style="width: 100%; height: 600px;"></div>
+
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).on('ready', function() {
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function(){
+          markers = handler.addMarkers([<%= raw @flat_coordinates.to_json %>]);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+      })
+    <% end %>
+  <% end %>
+
+
+
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
