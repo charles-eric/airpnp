@@ -3,8 +3,8 @@
     <div class="col-sm-6 col-sm-offset-3">
       <br><br>
       <%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
-        <%= f.input :description, placeholder: 'A nice description', hint: 'No special characters.' %>
-        <%= f.input :price, placeholder: 'A great price', hint: 'Only numbers pls.'%>
+        <%= f.input :description, placeholder: 'A nice description' %>
+        <%= f.input :price, placeholder: 'A great price'%>
         <%= f.input :capacity, placeholder: 'Capitcity number' %>
         <%= f.input :address, placeholder: 'Street number, street' %>
         <%= f.input :city, placeholder: 'City\'s place' %>

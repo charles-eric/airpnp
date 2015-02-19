@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+<<<<<<< HEAD
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="bg-white padding1 content_index">
         <div class="border-bot">
@@ -57,3 +58,40 @@
     </div>
   </div>
 </div>
+=======
+    <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+      <%= image_tag @flat.picture.url(:large) %>
+      <p>Description:</p>
+      <%= @flat.description %>
+      <p>Capacity:</p>
+      <%= @flat.capacity %>
+      <p>Address:</p>
+      <%= @flat.address %>
+      <p>City:</p>
+      <%= @flat.city %>
+      <p>Country:</p>
+      <%= @flat.country %>
+      <p>Price per day:</p>
+      <%= @flat.price %>
+    </div>
+  </div>
+</div>
+  <br>
+
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <br><br>
+        <%= simple_form_for [@flat, Order.new] do |f| %>
+          <%= f.input :date_begin, as: :date %>
+          <%= f.input :date_end, as: :date %>
+        <div class="center">
+          <%= f.submit class: "btn btn-danger" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Back', flats_path %>
+>>>>>>> 7a192145e0d9ccaff9a2b0748fd16f6df012a4a6
