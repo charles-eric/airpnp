@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
-//= require_tree .
-// app/assets/javascripts/application.js
 //= require underscore
 //= require gmaps/google
+//= require_tree .
+
+
 
 
 
