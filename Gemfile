@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'  # Add this at line 2
 
+gem "gmaps4rails"
+gem "rails-assets-underscore"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -32,6 +35,8 @@ gem 'paperclip'
 
 gem 'country_select'
 
+
+
 ruby '2.2.0'
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
@@ -55,6 +60,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -67,3 +74,4 @@ group :development, :test do
   gem 'letter_opener'
 end
 
+gem "geocoder"

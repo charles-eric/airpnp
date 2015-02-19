@@ -9,6 +9,17 @@ class Flat < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
+  def coordinates
+    "#{address} #{city}"
+  end
+
+  geocoded_by :coordinates
+  after_validation :geocode, if: :coordinates_changed?
+
+  def coordinates_changed?
+    address_changed? || city_changed?
+  end
+
   CAPACITY_OPTIONS = (1..15)
 
   def self.search(city, capacity)
