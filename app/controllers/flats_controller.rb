@@ -49,9 +49,8 @@ class FlatsController < ApplicationController
   end
 
   def index
-
-    if params[:search]
-      @flats = Flat.search(params[:search]).order("created_at DESC")
+    if params[:city] && params[:capacity]
+      @flats = Flat.search(params[:city], params[:capacity]).order("created_at DESC")
     else
       # TODO:
       # Flat.joins(:order).where(:orders => {:booked => false})
