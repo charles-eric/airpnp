@@ -12,13 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
 // app/assets/javascripts/application.js
 //= require underscore
 //= require gmaps/google
-
+//= require jquery
+//= require fancybox
 
 
 $(document).scroll(function(event){
@@ -29,6 +29,11 @@ $(document).scroll(function(event){
     $('.navbar').css('background', ' rgba(255, 255, 255, 1)')
   }
 });
+
+$(document).ready(function() {
+  $("a.fancybox").fancybox();
+});
+
 
 // voir si à supprimer
 //alert('Sadly this is static...');
