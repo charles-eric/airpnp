@@ -93,6 +93,8 @@ GEM
     execjs (2.3.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    fancybox2-rails (0.2.8)
+      railties (>= 3.1.0, < 5.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     figaro (1.1.0)
@@ -256,6 +258,7 @@ DEPENDENCIES
   country_select
   devise
   faker
+  fancybox2-rails (~> 0.2.8)
   figaro
   font-awesome-sass
   geocoder
