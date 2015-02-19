@@ -1,5 +1,64 @@
 <div class="container">
   <div class="row">
+<<<<<<< HEAD
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="bg-white padding1 content_index">
+        <div class="border-bot">
+          <div class="padding1 center">
+            <%= image_tag @flat.picture.url(:medium) %>
+          </div>
+        </div>
+        <div class="border-bot">
+          <p>
+            Description:
+            <div class="padding1 center">
+              <%= @flat.description %>
+            </div>
+          </p>
+        </div>
+        <div class="border-bot">
+          <p>Capacity:</p>
+          <div class="padding1 center">
+            <%= @flat.capacity %>
+          </div>
+        </div>
+        <div class="border-bot">
+          <p>Address:</p>
+          <div class="padding1 center">
+            <%= @flat.address %>
+          </div>
+        </div>
+        <div class="border-bot">
+          <p>City:</p>
+          <div class="padding1 center">
+            <%= @flat.city %>
+          </div>
+        </div>
+        <div class="border-bot">
+          <p>Country:</p>
+          <div class="padding1 center">
+            <%= @flat.country %>
+          </div>
+        </div>
+        <div class="border-bot">
+          <p>Price per day:</p>
+          <div class="padding1 center">
+            <%= @flat.price %>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="center">
+          <%= link_to 'BOOK', new_flat_order_path(@flat), class: "btn btn-danger" %>
+        </div>
+        <br>
+        <br>
+        <%= link_to 'Go Back', flats_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+=======
     <div class="col-xs-12 col-sm-4 col-sm-offset-1">
       <%= image_tag @flat.picture.url(:large) %>
       <p>Description:</p>
@@ -35,3 +94,4 @@
 </div>
 
 <%= link_to 'Back', flats_path %>
+>>>>>>> 7a192145e0d9ccaff9a2b0748fd16f6df012a4a6
