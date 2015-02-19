@@ -1,0 +1,53 @@
+<h2>Mes réservations à venir</h2><br /> <br />
+<ul>
+<% current_user.flats.each do |f| %>
+  <% f.orders.each do |o|%>
+    <li>
+      <%= o.user.firstname %>
+      <%= o.user.lastname %> ----
+      <%= o.flat.description %>, à
+      <%= o.flat.city %> ---- Du
+      <%= o.date_begin %> au
+      <%= o.date_end %> ----
+      <% if o.accepted == true %>
+        <%= "Réservation confirmée" %>
+      <% elsif o.accepted == false %>
+        <%= "Réservation refusée" %>
+      <% else %>
+        <%= "Réservation en attente" %>
+      <% end %>
+
+      <% if o.accepted == true %>
+        <%= simple_form_for o, url:order_path(o) do |f| %>
+          <%= f.hidden_field :accepted, value:true %>
+          <%= f.button :submit, 'Accepter', class:'btn btn-success' %>
+        <% end %>
+        <%= simple_form_for o, url:order_path(o) do |f| %>
+          <%= f.hidden_field :accepted, value:false %>
+          <%= f.button :submit, 'Refuser' %>
+        <% end %>
+
+      <% elsif o.accepted == false %>
+        <%= simple_form_for o, url:order_path(o) do |f| %>
+          <%= f.hidden_field :accepted, value:true %>
+          <%= f.button :submit, 'Accepter', class:'btn' %>
+        <% end %>
+        <%= simple_form_for o, url:order_path(o) do |f| %>
+          <%= f.hidden_field :accepted, value:false %>
+          <%= f.button :submit, 'Refuser', class:'btn btn-danger' %>
+        <% end %>
+
+      <% else %>
+        <%= simple_form_for o, url:order_path(o) do |f| %>
+          <%= f.hidden_field :accepted, value:true %>
+          <%= f.button :submit, 'Accepter' %>
+        <% end %>
+        <%= simple_form_for o, url:order_path(o) do |f| %>
+          <%= f.hidden_field :accepted, value:false %>
+          <%= f.button :submit, 'Refuser' %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+<% end %>
+</ul>

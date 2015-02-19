@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-resources :orders, only: [:index]
+resources :orders, only: [:index, :update]
+get 'dashboard', to: 'orders#dashboard'
 
 resources :flats do
   resources :orders, only: [:new, :create]
