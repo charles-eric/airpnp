@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+// app/assets/javascripts/application.js
+//= require underscore
+//= require gmaps/google
 
 
 
@@ -26,3 +29,6 @@ $(document).scroll(function(event){
     $('.navbar').css('background', ' rgba(255, 255, 255, 1)')
   }
 });
+
+// voir si à supprimer
+//alert('Sadly this is static...');

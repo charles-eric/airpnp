@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-1">
-      <%= image_tag @flat.picture.url(:medium) %>
+      <%= image_tag @flat.picture.url(:large) %>
       <p>Description:</p>
       <%= @flat.description %>
       <p>Capacity:</p>
@@ -18,5 +18,30 @@
   </div>
 </div>
   <br>
-<%= link_to 'BOOK', new_flat_order_path(@flat) %>
+
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <br><br>
+        <%= simple_form_for [@flat, Order.new] do |f| %>
+          <%= f.input :date_begin, as: :date %>
+          <%= f.input :date_end, as: :date %>
+        <div class="center">
+          <%= f.submit class: "btn btn-danger" %>
+          <% end %>
+        </div>
+        <!-- à voir avec jérémie -->
+        <% content_for(:after_js) do %>
+          <%= javascript_tag do %>
+            $(document).ready(function() {
+              var coord = <%= raw @flat_coordinates %>;
+              alert('Flat coordinates are ' + coord.latitude + ', ' + coord.longitude);
+            });
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+
 <%= link_to 'Back', flats_path %>

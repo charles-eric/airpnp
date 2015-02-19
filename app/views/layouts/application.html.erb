@@ -9,6 +9,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false" %>
+  <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+
+  <%= javascript_include_tag "application" %>
+
+  <%= yield(:after_js) %>
+
 </head>
 <body>
 
@@ -19,6 +27,9 @@
     </div>
 
     <%= yield %>
+
+      <%= javascript_include_tag 'application' %>
+    <%= yield(:after_js) %>
   </div>
 
   <%= render 'layouts/footer' %>
