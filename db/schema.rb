@@ -11,74 +11,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219105431) do
-
+ActiveRecord::Schema.define(version: 20_150_219_105_431) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "flats", force: :cascade do |t|
-    t.integer  "price"
-    t.string   "description"
-    t.integer  "capacity"
-    t.string   "address"
-    t.string   "city"
-    t.string   "country"
-    t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
-    t.float    "latitude"
-    t.float    "longitude"
+  create_table 'flats', force: :cascade do |t|
+    t.integer 'price'
+    t.string 'description'
+    t.integer 'capacity'
+    t.string 'address'
+    t.string 'city'
+    t.string 'country'
+    t.integer 'user_id'
+    t.datetime 'created_at',           null: false
+    t.datetime 'updated_at',           null: false
+    t.string 'picture_file_name'
+    t.string 'picture_content_type'
+    t.integer 'picture_file_size'
+    t.datetime 'picture_updated_at'
+    t.float 'latitude'
+    t.float 'longitude'
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.date     "date_begin"
-    t.date     "date_end"
-    t.boolean  "booked",     default: false
-    t.integer  "user_id"
-    t.integer  "flat_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "accepted"
+  create_table 'orders', force: :cascade do |t|
+    t.date 'date_begin'
+    t.date 'date_end'
+    t.boolean 'booked',     default: false
+    t.integer 'user_id'
+    t.integer 'flat_id'
+    t.datetime 'created_at',                 null: false
+    t.datetime 'updated_at',                 null: false
+    t.boolean 'accepted'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "phonenumber"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "description"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
-    t.string   "phonenumber"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "description"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "picture"
-    t.string   "name"
-    t.string   "token"
-    t.datetime "token_expiry"
+  create_table 'users', force: :cascade do |t|
+    t.string 'email',                  default: '', null: false
+    t.string 'encrypted_password',     default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.integer 'sign_in_count',          default: 0,  null: false
+    t.datetime 'current_sign_in_at'
+    t.datetime 'last_sign_in_at'
+    t.inet 'current_sign_in_ip'
+    t.inet 'last_sign_in_ip'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.string 'phonenumber'
+    t.string 'firstname'
+    t.string 'lastname'
+    t.string 'description'
+    t.string 'picture_file_name'
+    t.string 'picture_content_type'
+    t.integer 'picture_file_size'
+    t.datetime 'picture_updated_at'
+    t.string 'provider'
+    t.string 'uid'
+    t.string 'picture'
+    t.string 'name'
+    t.string 'token'
+    t.datetime 'token_expiry'
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
+  add_index 'users', ['email'], name: 'index_users_on_email', unique: true, using: :btree
+  add_index 'users', ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true, using: :btree
 end

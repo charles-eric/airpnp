@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
     @user = user
-    @greeting = "Hi"
+    @greeting = 'Hi'
 
     mail(to: @user.email, subject: 'welcome to AirPnP')
   end

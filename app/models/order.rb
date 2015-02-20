@@ -4,15 +4,15 @@ class Order < ActiveRecord::Base
   # after_create :send_email_to_owner
 
   def accepted?
-    self.accepted == true
+    accepted == true
   end
 
   def pending?
-    self.accepted == nil
+    accepted.nil?
   end
 
   def refused?
-    self.accepted == false
+    accepted == false
   end
 
   private

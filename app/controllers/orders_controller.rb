@@ -29,7 +29,6 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-
   end
 
   def index
@@ -49,7 +48,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-   params.require(:order).permit(:date_begin, :date_end, :booked, :accepted)
+    params.require(:order).permit(:date_begin, :date_end, :booked, :accepted)
   end
 
   # def send_owner_validation_email

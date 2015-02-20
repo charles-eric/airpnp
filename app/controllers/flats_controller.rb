@@ -2,7 +2,6 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
   before_filter :require_permission, only: [:edit, :destroy]
 
-
   def new
     @flat = Flat.new
     @flat.orders.build
@@ -41,12 +40,11 @@ class FlatsController < ApplicationController
   def destroy
     @flat.delete
     redirect_to flats_path
-
   end
 
   def index
     if params[:city] && params[:capacity]
-      @flats = Flat.search(params[:city], params[:capacity]).order("created_at DESC")
+      @flats = Flat.search(params[:city], params[:capacity]).order('created_at DESC')
     else
       # TODO:
       # Flat.joins(:order).where(:orders => {:booked => false})
@@ -69,8 +67,6 @@ class FlatsController < ApplicationController
   end
 
   private
-
-
 
   def set_flat
     @flat = Flat.find(params[:id])
