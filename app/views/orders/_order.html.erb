@@ -1,4 +1,9 @@
-<%= link_to (image_tag order.flat.picture.url(:thumb)), order.flat  %>  <br>
+
+ <% if order.flat.picture_file_name %>
+    <%= link_to (image_tag order.flat.picture.url(:thumb)), order.flat %>
+ <% else %>
+    <%= link_to (image_tag("missing_image.png")), order.flat%>
+  <% end %>  <br>
 From <%= order.date_begin %> to <%= order.date_end %> <br>
 Destination: <%= order.flat.city %> <br>
 Status:

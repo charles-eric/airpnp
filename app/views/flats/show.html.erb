@@ -27,7 +27,7 @@
         <div class="border-bot">
           <div class="padding1 center">
             <% if @flat.picture_file_name %>
-                <%= image_tag @flat.picture.url(:medium) %>
+                <%= image_tag @flat.picture.url(:large) %>
             <% else %>
                 <%= image_tag("missing_image.png")%>
             <% end %>
