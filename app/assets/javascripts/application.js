@@ -33,5 +33,3 @@ $(document).ready(function() {
 });
 
 
-// voir si à supprimer
-//alert('Sadly this is static...');
