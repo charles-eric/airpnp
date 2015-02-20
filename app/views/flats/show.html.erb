@@ -106,25 +106,30 @@
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="bg-white padding1 content_index">
-        <br>
-        <%= simple_form_for [@flat, Order.new] do |f| %>
-          <%= f.input :date_begin, as: :date %>
-          <%= f.input :date_end, as: :date %>
         <div class="center">
           <br>
-          <%= link_to 'Go Back', flats_path, class: "btn btn-primary" %>
           <% if current_user == Flat.find(params[:id]).user %>
-            <%= link_to 'Edit', edit_flat_path(@flat), class: "btn btn-danger"%>
-            <%= link_to 'Delete', flat_path(@flat), :method => :delete, class: "btn btn-danger"%>
-        <% else %>
-            <%= link_to 'Log In', user_session_path, class: "btn btn-success"%>
-        <% end %>
-
+                <%= link_to 'Edit', edit_flat_path(@flat), class: "btn btn-danger"%>
+                <br>
+                <br>
+                <%= form_tag flat_path(@flat), :method => :delete do %>
+                  <%= submit_tag "Delete", class: "btn btn-danger", :onclick => "return confirm('Are you sure?')"%>
+                <% end %>
+            <% else %>
+                <%= simple_form_for [@flat, Order.new] do |f| %>
+                <%= f.input :date_begin, as: :date %>
+                <%= f.input :date_end, as: :date %>
+                <%= f.submit "Book this flat", class: "btn btn-danger" %>
+              <% end %>
+            <% end %>
+        </div>
+      <div class="center">
+        <br>
+        <div class="padding1">
+          <%= link_to 'Go Back', flats_path, class: "btn btn-primary" %>
         </div>
       </div>
-
     </div>
-
   </div>
 </div>
 
