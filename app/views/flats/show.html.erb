@@ -1,11 +1,43 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <% if @flat.picture_file_name %>
-          <%= image_tag @flat.picture.url(:large) %>
-      <% else %>
-          <%= image_tag("missing_image.png")%>
-      <% end %>
+    <div class="col-xs-12 col-sm-12">
+      <div class="bg-white padding1 center">
+        <%= link_to "#", 'data-target' => '#myModal', 'data-toggle' => 'modal', style: "z-index: 1;", id: "trigger" do %>
+          <% if @flat.picture_file_name %>
+              <%= image_tag @flat.picture.url(:medium) %>
+          <% else %>
+              <%= image_tag("missing_image.png")%>
+          <% end %>
+        <% end %>
+        <%= link_to "#", 'data-target' => '#myModal', 'data-toggle' => 'modal', style: "z-index: 1;", id: "trigger" do %>
+          <% if @flat.picture_file_name %>
+              <%= image_tag @flat.picture.url(:medium) %>
+          <% else %>
+              <%= image_tag("missing_image.png")%>
+          <% end %>
+        <% end %>
+        <%= link_to "#", 'data-target' => '#myModal', 'data-toggle' => 'modal', style: "z-index: 1;", id: "trigger" do %>
+          <% if @flat.picture_file_name %>
+              <%= image_tag @flat.picture.url(:medium) %>
+          <% else %>
+              <%= image_tag("missing_image.png")%>
+          <% end %>
+        <% end %>
+        <%= link_to "#", 'data-target' => '#myModal', 'data-toggle' => 'modal', style: "z-index: 1;", id: "trigger" do %>
+          <% if @flat.picture_file_name %>
+              <%= image_tag @flat.picture.url(:medium) %>
+          <% else %>
+              <%= image_tag("missing_image.png")%>
+          <% end %>
+        <% end %>
+        <%= link_to "#", 'data-target' => '#myModal', 'data-toggle' => 'modal', style: "z-index: 1;", id: "trigger" do %>
+          <% if @flat.picture_file_name %>
+              <%= image_tag @flat.picture.url(:medium) %>
+          <% else %>
+              <%= image_tag("missing_image.png")%>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -77,19 +109,49 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <br>
-      <%= simple_form_for [@flat, Order.new] do |f| %>
-        <%= f.input :date_begin, as: :date %>
-        <%= f.input :date_end, as: :date %>
-      <div class="center">
+      <div class="bg-white padding1 content_index">
         <br>
-        <%= f.submit class: "btn btn-danger" %>
-        <% end %>
-        <div class="padding1">
+        <%= simple_form_for [@flat, Order.new] do |f| %>
+          <%= f.input :date_begin, as: :date %>
+          <%= f.input :date_end, as: :date %>
+        <div class="center">
           <br>
-          <%= link_to 'Go Back', flats_path, class: "btn btn-primary" %>
+          <%= f.submit class: "btn btn-danger" %>
+          <% end %>
+          <div class="padding1">
+            <br>
+            <%= link_to 'Go Back', flats_path, class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+<div id="myModal" class="ekko-lightbox modal fade" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" style="width: auto; max-width: 644px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" aria-hidden="true" data-dismiss="modal" type="button">
+          ×
+        </button>
+        <h4 class="modal-title">
+          <%= @flat.description %>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="ekko-lightbox-container center">
+          <div>
+            <%= image_tag @flat.picture.url(:large) %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= @flat.address %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade in"></div>
