@@ -4,13 +4,18 @@
       <br>
       <br>
       <%= form_tag(flats_path, :method => "get", id: "search-form", class: "form-inline") do %>
-        <%= text_field_tag :city, params[:city], placeholder: "Your next destination", class: "form-control" %>
+        <%= text_field_tag :city, params[:city], :id => 'user_input_autocomplete_address', placeholder: "Your next destination", class: "form-control" %>
         <%= label_tag :capacity %>
         <%= select_tag :capacity, options_for_select(Flat::CAPACITY_OPTIONS), class: "form-control"%>
         <%= submit_tag "Search", :name => nil, class: "btn btn-danger" %>
       <% end %>
     </div>
     <div id="map" style="width: 100%; height: 600px;"></div>
+
+    <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDRNN4Q3kica7JUVDyTJGm07w0QDduPhvA">
+</script>
+
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>

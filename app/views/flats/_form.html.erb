@@ -6,7 +6,7 @@
         <%= f.input :description, placeholder: 'A nice description' %>
         <%= f.input :price, placeholder: 'A great price'%>
         <%= f.input :capacity, placeholder: 'Capitcity number' %>
-        <%= f.input :address, placeholder: 'Street number, street' %>
+        <%= f.input :address,  placeholder: 'Start typing your address...', :input_html => { :id => 'user_input_autocomplete_address' } %>
         <%= f.input :city, placeholder: 'City\'s place' %>
         <%= f.input :country, collection: @continents, prompt: "Select a country" %>
         <br>
@@ -19,3 +19,9 @@
     </div>
   </div>
 </div>
+
+
+
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDRNN4Q3kica7JUVDyTJGm07w0QDduPhvA">
+</script>

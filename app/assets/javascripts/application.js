@@ -31,5 +31,3 @@ $(document).scroll(function(event){
 
 
 
-// voir si à supprimer
-//alert('Sadly this is static...');
