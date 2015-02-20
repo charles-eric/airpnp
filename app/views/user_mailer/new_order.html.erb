@@ -1,0 +1,10 @@
+Hi <%= @owner.firstname %> <%= @owner.lastname %>,<br /><br />
+
+Someone just booked your flat. Please review the reservation and enjoy making money ;)<br /><br />
+
+Request from: <%= @user.firstname %> <%= @user.lastname %><br /><br />
+
+Your place: <%= @flat.description %> in <%= @flat.city %><br/>
+Date: <%= @order.date_begin %> - <%= @order.date_end %><br /><br />
+
+<a href="http://localhost:3000/dashboard" target="blank">Review</a>
