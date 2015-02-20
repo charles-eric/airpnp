@@ -22,8 +22,8 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
 
   Devise.setup do |config|
-  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"], scope: 'email'
-end
+    config.omniauth :facebook, ENV['FB_ID'], ENV['FB_SECRET'], scope: 'email'
+  end
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -45,12 +45,12 @@ end
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [ :email ]
+  config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [ :email ]
+  config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the

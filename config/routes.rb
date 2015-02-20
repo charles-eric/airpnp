@@ -1,20 +1,16 @@
 Rails.application.routes.draw do
+  resources :orders, only: [:index, :update]
+  get 'dashboard', to: 'orders#dashboard'
 
-resources :orders, only: [:index, :update]
-get 'dashboard', to: 'orders#dashboard'
+  resources :flats do
+    resources :orders, only: [:new, :create]
+  end
 
-resources :flats do
-  resources :orders, only: [:new, :create]
-end
+  resources :pages
 
-resources :pages
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
 
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", registrations: 'users/registrations' }
-
-
-
-  root to: "pages#home"
-
+  root to: 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
