@@ -28,10 +28,6 @@ $(document).scroll(function(event){
   }
 });
 
-$(document).ready(function() {
-  $("a.fancybox").fancybox();
-});
 
 
-// voir si à supprimer
-//alert('Sadly this is static...');
+
