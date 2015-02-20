@@ -12,8 +12,8 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.booked = true
     if @order.save
+      UserMailer.new_order(@order).deliver
       redirect_to orders_path
-      # send_owner_validation_email
     else
       render :new
     end
@@ -22,7 +22,6 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
-
     redirect_to dashboard_path
   end
 

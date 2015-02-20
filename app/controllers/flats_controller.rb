@@ -1,5 +1,6 @@
 class FlatsController < ApplicationController
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
+  before_filter :require_permission, only: [:edit, :destroy]
 
 
   def new
@@ -35,15 +36,11 @@ class FlatsController < ApplicationController
   end
 
   def edit
-    @flat.destroy
-    respond_to do |format|
-      format.html { redirect_to flats_url, notice: 'Flat was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   def destroy
-    @flat.delete
+    @flat.destroy
+
     redirect_to flats_path
 
   end
@@ -67,7 +64,14 @@ class FlatsController < ApplicationController
     @flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
   end
 
+  def require_permission
+    if current_user != Flat.find(params[:id]).user
+    end
+  end
+
   private
+
+
 
   def set_flat
     @flat = Flat.find(params[:id])

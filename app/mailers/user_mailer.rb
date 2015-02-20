@@ -1,14 +1,23 @@
 class UserMailer < ApplicationMailer
-
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.usermailer.welcome.subject
   #
-  def welcome
+  def welcome(user)
+    @user = user
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail(to: @user.email, subject: 'welcome to AirPnP')
+  end
+
+  def new_order(order)
+    @order = order
+    @flat = order.flat
+    @owner = order.flat.user
+    @user = order.user
+
+    mail(to: @user.email, subject: 'Someone booked your flat')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
