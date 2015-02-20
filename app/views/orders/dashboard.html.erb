@@ -3,25 +3,20 @@
 <div class="container">
   <% current_user.flats.each do |f| %>
     <% f.orders.each do |o|%>
-      <div class="row bg-white">
+      <div class="row bg-white border-bot">
         <div class="col-md-2">
           <div class="padding1 bg-white min-height">
-            <% if o.user.picture_file_name %>
-              <%= image_tag o.user.picture.url(:thumb) %>
-            <% else %>
-              <%= image_tag("missing_image.png")%>
-            <% end %>
             <%= o.user.firstname %>
             <%= o.user.lastname %>
           </div>
         </div>
         <div class="col-md-2">
           <div class="padding1 bg-white min-height">
-            <%= o.flat.description %>, à
+            <%= o.flat.description %><br>
             <%= o.flat.city %>
           </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div class="padding1 bg-white min-height">
             <%= o.date_begin %> au
             <%= o.date_end %>
@@ -49,8 +44,8 @@
             <% end %>
           </div>
         </div>
-        <div class="col-md-2">
-          <div class="padding1 bg-white min-height">
+        <div class="col-md-1">
+          <div class="padding1 bg-white center">
             <% if o.accepted == true %>
               <%= simple_form_for o, url:order_path(o) do |f| %>
                 <%= f.hidden_field :accepted, value:true %>
