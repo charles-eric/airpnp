@@ -1,86 +1,70 @@
 <h2>Messages reçus</h2><br /> <br />
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Interlocuteur</th>
-      <th>Place</th>
-      <th>Date of booking</th>
-      <th>Duration</th>
-      <th>Price</th>
-      <th>Status</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-<% current_user.flats.each do |f| %>
-  <% f.orders.each do |o|%>
-      <td>
-        <% if o.user.picture_file_name %>
-            <%= image_tag o.user.picture.url(:thumb) %>
-        <% else %>
-            <%= image_tag("missing_image.png")%>
-        <% end %>
-      </td>
-      <td>
-        <%= o.user.firstname %>
-        <%= o.user.lastname %>
-      </td>
-      <td>
-        <%= o.flat.description %>, à
-        <%= o.flat.city %>
-      </td>
-      <td>
-        <%= o.date_begin %> au
-        <%= o.date_end %>
-      </td>
-      <td>
-        <% duration = (o.date_end - o.date_begin).to_i %>
-        <%= duration %><%= " jours" %>
-      </td>
-      <td>
-        <% if o.flat.price %>
-          <%= (duration * o.flat.price) %>
-          <%= "euros" %>
-        <% end %>
-      </td>
-      <td>
-        <% if o.accepted == true %>
-          <%= "Réservation confirmée" %>
-        <% elsif o.accepted == false %>
-          <%= "Réservation refusée" %>
-        <% else %>
-          <%= "Réservation en attente" %>
-        <% end %>
-      </td>
-      <td>
-        <div class ="btn-group" role="group">
-        <% if o.accepted == true %>
-          <%= simple_form_for o, url:order_path(o) do |f| %>
-            <%= f.hidden_field :accepted, value:true %>
-            <%= f.button :submit, 'Accepté', class:'btn btn-success' %>
-            <% end %>
-        <% elsif o.accepted == false %>
-          <%= simple_form_for o, url:order_path(o) do |f| %>
-            <%= f.hidden_field :accepted, value:false %>
-            <%= f.button :submit, 'Refusé', class:'btn btn-danger' %>
-          <% end %>
 
-        <% else %>
-          <%= simple_form_for o, url:order_path(o) do |f| %>
-            <%= f.hidden_field :accepted, value:true %>
-            <%= f.button :submit, 'Accepter' %>
-          <% end %>
-          <%= simple_form_for o, url:order_path(o) do |f| %>
-            <%= f.hidden_field :accepted, value:false %>
-            <%= f.button :submit, 'Refuser' %>
-          <% end %>
-        <% end %>
-      </div>
-    </td>
-    </tr>
-  </tbody>
-  <% end %>
-<% end %>
-</table>
+<div class="container">
+  <div class="row">
+    <% current_user.flats.each do |f| %>
+      <% f.orders.each do |o|%>
+        <div class="col-md-2">
+            <% if o.user.picture_file_name %>
+                <%= image_tag o.user.picture.url(:thumb) %>
+            <% else %>
+                <%= image_tag("missing_image.png")%>
+            <% end %>
+            <%= o.user.firstname %>
+            <%= o.user.lastname %>
+        </div>
+        <div class="col-md-2">
+            <%= o.flat.description %>, à
+            <%= o.flat.city %>
+        </div>
+        <div class="col-md-2">
+            <%= o.date_begin %> au
+            <%= o.date_end %>
+        </div>
+        <div class="col-md-2">
+            <% duration = (o.date_end - o.date_begin).to_i %>
+            <%= duration %><%= " jours" %>
+
+            <% if o.flat.price %>
+              <%= (duration * o.flat.price) %>
+              <%= "euros" %>
+            <% end %>
+        </div>
+        <div class="col-md-2">
+            <% if o.accepted == true %>
+              <%= "Réservation confirmée" %>
+            <% elsif o.accepted == false %>
+              <%= "Réservation refusée" %>
+            <% else %>
+              <%= "Réservation en attente" %>
+            <% end %>
+        </div>
+        <div class="col-md-2">
+            <div class ="btn-group" role="group">
+            <% if o.accepted == true %>
+              <%= simple_form_for o, url:order_path(o) do |f| %>
+                <%= f.hidden_field :accepted, value:true %>
+                <%= f.button :submit, 'Accepté', class:'btn btn-success' %>
+                <% end %>
+            <% elsif o.accepted == false %>
+              <%= simple_form_for o, url:order_path(o) do |f| %>
+                <%= f.hidden_field :accepted, value:false %>
+                <%= f.button :submit, 'Refusé', class:'btn btn-danger' %>
+              <% end %>
+
+            <% else %>
+              <%= simple_form_for o, url:order_path(o) do |f| %>
+                <%= f.hidden_field :accepted, value:true %>
+                <%= f.button :submit, 'Accepter' %>
+              <% end %>
+              <%= simple_form_for o, url:order_path(o) do |f| %>
+                <%= f.hidden_field :accepted, value:false %>
+                <%= f.button :submit, 'Refuser' %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
